@@ -33,7 +33,7 @@ export function QuestionDisplay({ question, questionNumber, totalQuestions, onAn
           className="w-full py-6 text-left justify-start h-auto bg-secondary hover:bg-secondary/90 text-secondary-foreground border border-primary/30"
           variant="secondary"
         >
-          <span className="font-bold mr-2 text-primary">Terminator's View:</span> {question.fatalisticAnswer}
+          {question.fatalisticAnswer}
         </Button>
         <Button
           onClick={() => onAnswer('Connor')}
@@ -41,7 +41,7 @@ export function QuestionDisplay({ question, questionNumber, totalQuestions, onAn
           className="w-full py-6 text-left justify-start h-auto bg-accent hover:bg-accent/90 text-accent-foreground border border-primary/30"
           variant="secondary" // Using secondary as base and overriding colors, or create new variant
         >
-         <span className="font-bold mr-2 text-primary">Connor's View:</span> {question.optimisticAnswer}
+         {question.optimisticAnswer}
         </Button>
       </CardContent>
       {isLoading && (
