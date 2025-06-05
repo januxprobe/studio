@@ -15,43 +15,44 @@ export const TERMINATOR_PROMPTS: string[] = [
 ];
 
 // Generic Connor prompts for fallback or if gender is 'unknown'
+// These can retain a slightly more tech-neutral or adaptable feel
 export const CONNOR_PROMPTS: string[] = [
-  "Add a sleek, futuristic tactical headset over one ear.",
-  "Enhance the lighting to be heroic and focused, perhaps with a slight lens flare.",
-  "Place a subtle, glowing blue or green insignia or badge on the clothing if visible, otherwise a faint aura of competence.",
-  "Subtly enhance facial features to convey a confident, determined expression.",
-  "Overlay a faint, translucent digital HUD element near one eye, showing abstract data.",
-  "If possible, add a subtle, holographic shimmer around the person, suggesting advanced tech.",
-  "Clean and sharpen the skin texture for a polished, heroic look.",
-  "Add a translucent blue or green visor over the eyes, as if part of a helmet.",
-  "Place a dark green or blue tactical strap across the chest or shoulder if appropriate for the framing.",
-  "Add a subtle glow to the eyes, suggesting focus and enhanced perception."
+  "Add a determined glint to the eyes and a slightly more resolute expression.",
+  "Enhance the lighting to be heroic and focused, perhaps with a subtle warm glow.",
+  "Place a subtle, worn emblem or patch on clothing if visible (e.g., a simple resistance symbol), otherwise a faint aura of inner strength.",
+  "Subtly enhance facial features to convey a confident, determined expression, emphasizing human resilience.",
+  "Give the hair a slightly wind-swept or practical, action-ready look.",
+  "If possible, add a very subtle, well-worn leather or canvas strap detail on the shoulder or chest.",
+  "Clean and sharpen the skin texture for a defined, yet human look, perhaps with a hint of grit.",
+  "Add a look of intense focus or unwavering resolve to the eyes.",
+  "Place a simple, functional piece of gear like a well-used communications earpiece (not overly futuristic).",
+  "Add a subtle glow of determination or hope in the eyes."
 ];
 
 export const SARAH_CONNOR_PROMPTS: string[] = [
-  "Add a sleek, tactical sleeveless vest and determined, focused eyes.",
-  "Give a resilient, survivor look with a confident expression and artfully styled, slightly tousled hair.",
-  "Overlay futuristic, glowing blue utility straps or a tech-enhanced bandolier visible on the shoulder or chest.",
-  "Style hair in a practical but cool updo or braid, looking resolute and ready for action.",
-  "Add subtle cybernetic enhancements like glowing circuit patterns on one arm or a sophisticated neural interface at the temple.",
-  "Equip with a stylish, dark, high-tech armored top and a determined, no-nonsense demeanor.",
-  "Add a small, intricate, glowing blue tech-tattoo or emblem on the cheek or neck, symbolizing resistance.",
-  "Give the eyes a bright, intelligent, and unwavering gaze, perhaps with a subtle data-stream reflection.",
-  "Place a sleek, augmented reality visor or advanced comms earpiece.",
-  "Enhance skin with a subtle, healthy glow, a determined set to the jawline, and an aura of quiet strength."
+  "Add a tough, worn denim or canvas jacket collar, and a determined, unwavering gaze.",
+  "Give a resilient, survivor look with a smudge of dirt on the cheek and focused, intense eyes.",
+  "Overlay a simple, practical bandolier strap or a sturdy belt with pouches, suggesting resourcefulness.",
+  "Style hair in a practical ponytail or a slightly messy but functional cut, conveying readiness for action.",
+  "Add a minor, faded scar on the eyebrow or cheek, hinting at past struggles overcome.",
+  "Equip with a simple, dark, functional tank top or t-shirt, emphasizing a strong, human physique.",
+  "A facial expression of fierce determination and a protective maternal instinct.",
+  "Give the eyes a bright, intelligent, and hardened look, reflecting a survivor's spirit.",
+  "Place a simple, well-worn tactical glove on one hand if visible, or a wrap around the forearm.",
+  "Enhance skin with a realistic, slightly weathered texture, a strong jawline, and an aura of unyielding strength."
 ];
 
 export const KYLE_REESE_PROMPTS: string[] = [
-  "Add a stylish, worn leather jacket or a modern tactical trench coat collar over practical, dark clothing.",
-  "Give a sharp, vigilant, and resourceful look in the eyes, with an expression of focused readiness.",
-  "Overlay a high-tech, minimalist bandolier or a chest rig with glowing blue energy cells.",
-  "Style hair in a neat, short, tactical cut, looking sharp and ready for anything.",
-  "Add a very subtle, clean cybernetic line or a small metallic stud near the temple, hinting at advanced tech integration.",
-  "Convey a lean, athletic build through posture and add a futuristic, lightweight body armor vest.",
-  "A facial expression of calm confidence, sharp alertness, and underlying determination.",
-  "Add sleek, high-tech tactical gloves with glowing accents if hands are visible.",
-  "Place a compact, advanced plasma pistol or a futuristic multi-tool visibly on a hip or thigh holster.",
-  "Give a clean-shaven, sharp look with a confident, determined expression and an energetic aura."
+  "Add a worn, dark trench coat collar or a simple, rugged jacket over a plain t-shirt.",
+  "Give a haunted but resolute look in the eyes, with an expression of weary determination.",
+  "Overlay a simple, improvised strap for carrying gear, made of canvas or leather.",
+  "Style hair in a slightly unkempt, practical manner, as if having endured hardship.",
+  "Add a few days' stubble or a very subtle, healed cut on the lip, showing a tough journey.",
+  "Convey a lean, wiry build, with clothing that is functional but shows signs of wear.",
+  "A facial expression of grim determination, alertness, and a protective nature.",
+  "Add a look of intense focus and readiness in the eyes, perhaps with dark circles suggesting lack of sleep.",
+  "Place a simple, well-used (but not futuristic) sidearm visibly holstered, or a combat knife sheathed.",
+  "Give a slightly dirty or battle-worn appearance to clothing and skin, emphasizing survival against odds."
 ];
 
 
@@ -62,7 +63,7 @@ export const FALLBACK_QUESTIONS: Question[] = [
     fatalisticAnswer: "Existential threat to humanity and job displacement at an unprecedented scale.",
     optimisticAnswer: "Ensuring ethical use and maintaining data privacy while unlocking new potentials.",
     fatalisticPrompt: TERMINATOR_PROMPTS[0],
-    optimisticPrompt: CONNOR_PROMPTS[0], // Generic Connor prompt for fallback
+    optimisticPrompt: CONNOR_PROMPTS[0],
   },
   {
     id: 'fallback-2',
@@ -137,4 +138,3 @@ export const FALLBACK_QUESTIONS: Question[] = [
     optimisticPrompt: CONNOR_PROMPTS[9],
   },
 ];
-
