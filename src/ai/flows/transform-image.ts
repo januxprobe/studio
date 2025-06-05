@@ -42,17 +42,17 @@ const transformImageFlow = ai.defineFlow(
     outputSchema: TransformImageOutputSchema,
   },
   async input => {
-    const fullPromptText = `You are an expert image editor. Your task is to modify an image that may have already undergone transformations. Each modification should be cumulative.
+    const fullPromptText = `You are an expert image editor. Your task is to modify an image that has ALREADY UNDERGONE previous transformations. Each new modification MUST be cumulative and layered on top of existing features.
 
 Step 1: Background Consistency.
 The background of the image MUST be a solid, vibrant orange color (specifically HSL 24 95% 45% --- a bright, saturated orange).
-- If the current image already has this exact orange background, maintain it.
+- If the current image already has this exact orange background, PERFECTLY MAINTAIN IT.
 - If the background is different, replace it with this solid orange color.
-When adjusting the background, you MUST meticulously preserve the primary human subject in the foreground, including all their current features and any transformations already applied to them.
+When adjusting or confirming the background, you MUST meticulously preserve the primary human subject in the foreground, including ALL their current features and EVERY transformation already applied to them from previous steps. DO NOT alter the subject at this stage.
 
-Step 2: Additive Subject Transformation.
-After ensuring the background is correct, apply the following new transformation *additively* to the human subject. This means the new features should be layered on top of, or integrated with, any existing characteristics or previously applied transformations on the subject.
-DO NOT remove, replace, or significantly alter existing features on the subject from prior transformations.
+Step 2: Strictly Additive Subject Transformation.
+After ensuring the background is correct and the subject's existing features are untouched, apply the following new transformation to the human subject. This transformation MUST BE STRICTLY ADDITIVE. You are to layer the new features described in the prompt below onto the subject.
+CRITICAL INSTRUCTION: DO NOT remove, DO NOT replace, and DO NOT significantly alter any existing characteristics or previously applied transformations already present on the subject. The new elements must be added *on top of* or *alongside* what is already there. Imagine you are adding a new layer in an image editing program.
 The new transformation to add to the subject is: "${input.prompt}"`;
 
     const {media} = await ai.generate({
