@@ -47,7 +47,7 @@ const transformImageFlow = ai.defineFlow(
 1.  **Background Management**:
     *   The background of the image MUST be a solid, vibrant orange color (specifically HSL 24 95% 45%).
     *   If the current image already has this exact orange background, PERFECTLY MAINTAIN IT without any changes.
-    *   If the background is different, replace it with this solid orange color. During this background replacement, the human subject in the foreground, including ALL their current features (e.g., hair, eyes, clothing, any existing cybernetics, accessories, scars, makeup, etc., from previous transformations), MUST remain COMPLETELY UNALTERED and perfectly preserved.
+    *   If the background is different, replace it with this solid orange color. During this background replacement, it is PARAMOUNT that the human subject in the foreground, including ALL their current features (e.g., hair, eyes, clothing, any existing cybernetics, accessories, scars, makeup, etc., from previous transformations), MUST remain ABSOLUTELY, COMPLETELY UNALTERED and perfectly preserved. The subject should look IDENTICAL to how they were before the background change, with only the background differing.
 
 2.  **Strictly Additive Subject Modification**:
     *   The human subject in the input image has existing features and prior transformations. These existing features and transformations form the BASE of the subject and MUST NOT BE REMOVED, REPLACED, ERASED, or DIMINISHED in any way.
