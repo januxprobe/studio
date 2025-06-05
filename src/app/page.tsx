@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
@@ -121,7 +122,7 @@ export default function AIDestinyMirrorPage() {
   const currentQuestionData = questions[currentQuestionIndex];
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-gradient-to-br from-background to-purple-200 font-body">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-gradient-to-br from-background to-orange-200 font-body">
       <div className="container mx-auto flex flex-col items-center justify-center w-full">
         {error && (
           <Alert variant="destructive" className="mb-8 max-w-xl">
