@@ -30,16 +30,16 @@ export function QuestionDisplay({ question, questionNumber, totalQuestions, onAn
         <Button
           onClick={() => onAnswer('Terminator')}
           disabled={isLoading}
-          className="w-full py-6 text-left justify-start h-auto bg-secondary hover:bg-secondary/90 text-secondary-foreground border border-primary/30"
-          variant="secondary"
+          className="w-full py-6 text-left justify-start h-auto border border-primary/30"
+          variant="default"
         >
           {question.fatalisticAnswer}
         </Button>
         <Button
           onClick={() => onAnswer('Connor')}
           disabled={isLoading}
-          className="w-full py-6 text-left justify-start h-auto bg-accent hover:bg-accent/90 text-accent-foreground border border-primary/30"
-          variant="secondary" // Using secondary as base and overriding colors, or create new variant
+          className="w-full py-6 text-left justify-start h-auto border border-primary/30"
+          variant="default"
         >
          {question.optimisticAnswer}
         </Button>
