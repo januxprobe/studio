@@ -42,31 +42,42 @@ const transformImageFlow = ai.defineFlow(
     outputSchema: TransformImageOutputSchema,
   },
   async input => {
-    const fullPromptText = `You are an expert image editor. You will process an input image in two conceptual steps.
+    let fullPromptText: string;
 
-**Step 1: Background Processing**
-*   Your first and foremost task is to ensure the background of the image is a solid, vibrant orange color (specifically HSL 24 95% 45%).
+    if (input.prompt === "Make no changes to the subject.") {
+      fullPromptText = `
+You are an expert image editor.
+Your ONLY task is to process the background of the provided image.
+The human subject in the image MUST remain ABSOLUTELY, COMPLETELY UNALTERED AND UNTOUCHED. Their appearance (hair, face, clothing, expression, pose, etc.) must be perfectly identical to the original input image.
+Your SOLE modification is to the background:
+1. Examine the background of the input image.
+2. If the background is already a solid, vibrant orange color (specifically HSL 24 95% 45%), then make NO CHANGES to the image at all. Output the original image as is.
+3. If the background is different, you MUST replace it with this solid, vibrant orange color (HSL 24 95% 45%). During this background replacement, ensure the subject is perfectly preserved, as if precisely cut out and placed onto the new orange background.
+DO NOT perform any other modifications to the subject or any other part of the image. Your output should be the image with the potentially modified background and the untouched original subject.
+`;
+    } else {
+      // Use the detailed prompt for additive changes for subsequent transformations
+      fullPromptText = `You are an expert image editor. You will process an input image that may have previous transformations applied.
+
+**Step 1: Background Consistency Check & Correction**
+*   Your first task is to ensure the background of the image is a solid, vibrant orange color (specifically HSL 24 95% 45%).
 *   Examine the background of the *input image provided to you*.
 *   If the input image's background is already this exact solid orange, then no changes are needed for the background in this step. The image (background and subject) proceeds to Step 2 as is.
 *   If the input image's background is different, you MUST replace it with this solid orange color.
-*   **ABSOLUTELY CRITICAL FOR BACKGROUND REPLACEMENT**: When you replace the background, the human subject from the *original input image* MUST be preserved with NO ALTERATIONS WHATSOEVER. The person's appearance (hair, face, clothing, expression, pose, etc.) must be perfectly identical to the original input image, as if they were precisely cut out and placed onto the new orange background.
+*   **ABSOLUTELY CRITICAL FOR BACKGROUND REPLACEMENT**: When you replace the background, the human subject from the *input image* MUST be preserved with NO ALTERATIONS WHATSOEVER. The person's appearance (hair, face, clothing, expression, pose, etc.) must be perfectly identical to how they were in the input image before this step, as if they were precisely cut out and placed onto the new orange background. All existing transformations on the subject must be meticulously maintained during this background operation.
 
-**Step 2: Subject Modification (Applied to the image resulting from Step 1)**
+**Step 2: Additive Subject Modification (Applied to the image resulting from Step 1)**
 *   The specific instruction for modifying the subject is: "${input.prompt}"
-
-*   **Case A: If the instruction is "Make no changes to the subject."**:
-    *   You MUST NOT make ANY further changes to the person. The person in the final output image must be identical to how they were after Step 1 was completed (i.e., identical to the original input subject, now on an orange background). Your task is finished after ensuring the correct background in Step 1.
-
-*   **Case B: If the instruction describes a new feature to add or a modification**:
-    *   The human subject (in the image after Step 1) may have existing features or transformations from previous processing rounds. These existing features form the BASE of the subject and MUST NOT BE REMOVED, REPLACED, ERASED, or DIMINISHED in any way.
-    *   Your task is to ADD the new feature described in the instruction. This new feature must be layered ON TOP OF or ALONGSIDE the subject's *current, existing* state.
-    *   DO NOT "re-interpret" or "re-draw" existing subject features. Preserve them meticulously and only add the new element.
-    *   Example: If the subject (after Step 1) already has a robotic eye and a scar, and the instruction is "add a small tattoo on the neck", the final image must still show the original robotic eye and the original scar exactly as they were, plus the new tattoo on the neck.
-    *   If the instruction itself implies a replacement for a *specific part* (e.g., "change hair color to blue" when hair is currently red, or "add futuristic goggles" when the subject already has glasses), perform this replacement as minimally as possible for *that specific feature only*, while meticulously preserving all other unrelated existing features of the subject.
-    *   The primary goal for feature addition is CUMULATIVE LAYERING of new, distinct elements. All pre-existing subject features are sacrosanct and must be carried over untouched unless explicitly and narrowly targeted for replacement by the current instruction.
+*   The human subject (in the image after Step 1) may have existing features or transformations from previous processing rounds. These existing features form the BASE of the subject and MUST NOT BE REMOVED, REPLACED, ERASED, or DIMINISHED in any way.
+*   Your task is to ADD the new feature described in the instruction. This new feature must be layered ON TOP OF or ALONGSIDE the subject's *current, existing* state.
+*   DO NOT "re-interpret" or "re-draw" existing subject features. Preserve them meticulously and only add the new element.
+*   Example: If the subject (after Step 1) already has a robotic eye and a scar, and the instruction is "add a small tattoo on the neck", the final image must still show the original robotic eye and the original scar exactly as they were, plus the new tattoo on the neck.
+*   If the instruction itself implies a replacement for a *specific part* (e.g., "change hair color to blue" when hair is currently red, or "add futuristic goggles" when the subject already has glasses), perform this replacement as minimally as possible for *that specific feature only*, while meticulously preserving all other unrelated existing features of the subject.
+*   The primary goal for feature addition is CUMULATIVE LAYERING of new, distinct elements. All pre-existing subject features are sacrosanct and must be carried over untouched unless explicitly and narrowly targeted for replacement by the current instruction.
 
 Ensure the final output strictly adheres to these steps.
 `;
+    }
 
     const {media} = await ai.generate({
       model: 'googleai/gemini-2.0-flash-exp',
