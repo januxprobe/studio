@@ -16,42 +16,42 @@ export const TERMINATOR_PROMPTS: string[] = [
 
 // Generic Connor prompts for fallback or if gender is 'unknown'
 export const CONNOR_PROMPTS: string[] = [
-  "Subtly enhance the set of the jaw to show determination, and a slightly more resolute expression.",
-  "Enhance the lighting to be heroic and focused, perhaps with a subtle warm glow on the scene, not directly on the eyes.",
-  "Place a subtle, worn emblem or patch on clothing if visible (e.g., a simple resistance symbol), otherwise a faint aura of inner strength in their posture.",
-  "Subtly enhance facial features to convey a confident, determined expression, emphasizing human resilience.",
-  "Give the hair a slightly wind-swept or practical, action-ready look (style only, no color change).",
-  "If possible, add a very subtle, well-worn leather or canvas strap detail on the shoulder or chest.",
-  "Clean and sharpen the skin texture for a defined, yet human look, perhaps with a hint of grit or minor, natural-looking smudges.",
-  "Adjust the brow slightly to convey intense focus, combined with an unwavering, resolute mouth.",
-  "Place a simple, functional piece of gear like a well-used communications earpiece (not overly futuristic or altering core features).",
-  "Ensure the expression conveys quiet confidence and resilience, perhaps through a steady posture."
+  "Adjust the mouth and jaw to convey a natural expression of determination and resolve. No artificial elements, no structural changes to features.",
+  "Enhance the lighting to be heroic and focused, perhaps with a subtle warm glow on the scene. No changes to eye color or appearance.",
+  "Add a subtle, worn emblem or patch on clothing if visible (e.g., a simple resistance symbol). Ensure posture conveys quiet inner strength. No facial alterations.",
+  "Adjust the facial expression to convey natural confidence and determination, emphasizing human resilience. No structural changes to features, no artificial elements.",
+  "Give the hair a slightly wind-swept or practical, action-ready look. Style only, NO color change, NO unnatural highlights.",
+  "If possible, add a very subtle, well-worn leather or canvas strap detail on the shoulder or chest. No facial or head alterations.",
+  "Adjust skin texture for a defined, human look. May include a hint of natural, non-metallic dirt or minor, natural-looking smudges, like from being outdoors. No tattoos or artificial markings.",
+  "Adjust the brow slightly to convey intense focus, combined with an unwavering, resolute mouth. No changes to eye color or structure.",
+  "If clothing allows, add a simple, non-electronic, functional detail like a loop or small D-ring on a strap or collar. Avoid any items on the face or head. Purely human appearance.",
+  "Ensure the expression conveys quiet confidence and resilience, perhaps through a steady posture. No artificial facial alterations."
 ];
 
 export const SARAH_CONNOR_PROMPTS: string[] = [
-  "Add a tough, worn denim or canvas jacket collar, and set the mouth in a firm line suggesting determination.",
-  "Add a smudge of natural-looking dirt on one cheek and subtly sharpen the facial features to convey focus.",
-  "Add a simple, sturdy leather belt with a few small, practical pouches attached.",
-  "Style hair in a practical, tied-back ponytail or a slightly messy but functional short cut (style only, no color change).",
-  "Add a very subtle, faded, natural-looking scar on the eyebrow or cheekbone, hinting at past resilience.",
-  "Add a simple, dark-colored, functional tank top or a robust, plain t-shirt.",
-  "Give the facial expression a look of fierce determination and unwavering resolve, focused on mouth and brow.",
-  "Ensure the expression is alert and conveys intelligence, reflecting a survivor's spirit through overall facial composure.",
-  "Add a well-worn, fingerless leather glove on one hand.",
-  "Add a slightly weathered texture to the skin, conveying experience, and define the jawline for a look of strength."
+  "Add a tough, worn denim or canvas jacket collar, and set the mouth in a firm line suggesting determination. Purely human expression, no artificial elements.",
+  "Add a smudge of natural-looking, non-metallic dirt on one cheek. Adjust the expression to convey strong focus, particularly around the eyes and brow. NO changes to eye color or structure. No tattoos.",
+  "Add a simple, sturdy leather belt with a few small, practical pouches attached. No facial alterations.",
+  "Style hair in a practical, tied-back ponytail or a slightly messy but functional short cut. Style only, NO color change, NO unnatural highlights.",
+  "Add a very subtle, faded, natural-looking scar on the eyebrow or cheekbone, hinting at past resilience. No other facial markings.",
+  "Add a simple, dark-colored, functional tank top or a robust, plain t-shirt. No facial alterations.",
+  "Give the facial expression a look of fierce determination and unwavering resolve, focused on mouth and brow. Purely human, no artificial enhancements.",
+  "Ensure the expression is alert and conveys intelligence, reflecting a survivor's spirit through overall facial composure. No changes to eye color, no facial technology.",
+  "Add a well-worn, fingerless leather glove on one hand. No facial or head alterations.",
+  "Add a slightly weathered texture to the skin, conveying experience. The expression should show strength through a firm set of the jaw. No metallic elements, no tattoos."
 ];
 
 export const KYLE_REESE_PROMPTS: string[] = [
-  "Add the collar of a worn, dark trench coat or a rugged, well-used field jacket over a plain t-shirt.",
-  "Set the jaw in a determined line, with an overall expression of focused intensity.",
-  "Add a simple, worn leather strap across the chest, as if for carrying essential supplies.",
-  "Style hair in a slightly unkempt, practical cut, suggesting someone who has endured hardship but remains strong (style only, no color change).",
-  "Add a few days' stubble to the jawline and a small, healed, natural-looking nick or cut on the chin or lip.",
-  "Add a practical, well-worn canvas or leather vest over a simple shirt.",
-  "Set the facial expression to grim determination, with lines of focus around the mouth and brow.",
-  "Subtly add faint, natural-looking dark circles under the eyes suggesting weariness but readiness, and an overall intense, focused expression (no change to eye color or iris).",
-  "Add a sturdy, worn leather watch or a simple, functional wrist compass.",
-  "Give clothing a slightly dusty and well-traveled appearance, and a determined set to the mouth."
+  "Add the collar of a worn, dark trench coat or a rugged, well-used field jacket over a plain t-shirt. No facial alterations.",
+  "Set the jaw in a determined line, with an overall expression of focused intensity. Purely human, no artificial elements.",
+  "Add a simple, worn leather strap across the chest, as if for carrying essential supplies. No facial or head alterations.",
+  "Style hair in a slightly unkempt, practical cut, suggesting someone who has endured hardship but remains strong. Style only, NO color change, NO unnatural highlights.",
+  "Add a few days' stubble to the jawline and a small, healed, natural-looking nick or cut on the chin or lip. No other facial markings or technology.",
+  "Add a practical, well-worn canvas or leather vest over a simple shirt. No facial alterations.",
+  "Set the facial expression to grim determination, with lines of focus around the mouth and brow. No artificial enhancements, purely human.",
+  "Subtly add faint, natural-looking dark circles under the eyes suggesting weariness but readiness, and an overall intense, focused expression. NO change to eye color or iris. No facial technology.",
+  "Add a sturdy, worn leather watch or a simple, functional wrist compass. No items on the face or head.",
+  "Give clothing a slightly dusty and well-traveled appearance, and a determined set to the mouth. No artificial facial alterations."
 ];
 
 
@@ -137,3 +137,4 @@ export const FALLBACK_QUESTIONS: Question[] = [
     optimisticPrompt: CONNOR_PROMPTS[9],
   },
 ];
+
