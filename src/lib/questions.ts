@@ -16,42 +16,32 @@ export const TERMINATOR_PROMPTS: string[] = [
 
 // Generic Connor prompts for fallback or if gender is 'unknown'
 export const CONNOR_PROMPTS: string[] = [
-  "Adjust the mouth and jaw to convey a natural expression of determination and resolve. ABSOLUTELY NO artificial elements, NO structural changes to features. ABSOLUTELY NO changes to hair color, ABSOLUTELY NO changes to eye color. ABSOLUTELY NO tattoos or artificial markings. Purely human appearance.",
-  "Enhance the lighting to be heroic and focused, perhaps with a subtle warm glow on the scene. ABSOLUTELY NO changes to eye color or appearance. ABSOLUTELY NO hair color changes. ABSOLUTELY NO tattoos. Subject must remain entirely human.",
-  "Add a subtle, worn emblem or patch on clothing if visible (e.g., a simple resistance symbol). Ensure posture conveys quiet inner strength. ABSOLUTELY NO facial alterations, ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Entirely human characteristics.",
-  "Adjust the facial expression to convey natural confidence and determination, emphasizing human resilience. ABSOLUTELY NO structural changes to features, ABSOLUTELY NO artificial elements. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Maintain a completely human look.",
-  "Give the hair a slightly wind-swept or practical, action-ready look. Style only, ABSOLUTELY NO color change, ABSOLUTELY NO unnatural highlights. ABSOLUTELY NO changes to eye color. ABSOLUTELY NO tattoos. Subject must appear fully human.",
-  "If possible, add a very subtle, well-worn leather or canvas strap detail on the shoulder or chest. ABSOLUTELY NO facial or head alterations beyond natural expression. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Preserve human appearance.",
-  "Adjust skin texture for a defined, human look. May include a hint of natural, non-metallic dirt or minor, natural-looking smudges, like from being outdoors. ABSOLUTELY NO tattoos or artificial markings. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. Must be entirely human.",
-  "Adjust the brow slightly to convey intense focus, combined with an unwavering, resolute mouth. ABSOLUTELY NO changes to eye color or structure. ABSOLUTELY NO hair color changes. ABSOLUTELY NO tattoos. Ensure a completely human appearance.",
-  "If clothing allows, add a simple, non-electronic, functional detail like a loop or small D-ring on a strap or collar. Avoid any items on the face or head. ABSOLUTELY NO artificial facial alterations. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Purely human appearance.",
-  "Ensure the expression conveys quiet confidence and resilience, perhaps through a steady posture. ABSOLUTELY NO artificial facial alterations. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Must maintain an entirely human look."
+  "Enhance the lighting to be heroic and focused, perhaps with a subtle warm glow on the scene.",
+  "Add a subtle, worn emblem or patch on clothing if visible (e.g., a simple resistance symbol).",
+  "Give the hair a slightly wind-swept or practical, action-ready look.",
+  "If possible, add a very subtle, well-worn leather or canvas strap detail on the shoulder or chest.",
+  "Adjust the brow slightly to convey intense focus, combined with an unwavering, resolute mouth.",
+  "If clothing allows, add a simple, non-electronic, functional detail like a loop or small D-ring on a strap or collar."
 ];
 
 export const SARAH_CONNOR_PROMPTS: string[] = [
-  "Add the collar of a tough, worn denim or canvas jacket. Set the mouth in a firm line suggesting determination. Purely human expression. ABSOLUTELY NO artificial elements, ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes, ABSOLUTELY NO tattoos. Subject must look completely human.",
-  "Add a smudge of natural-looking, non-metallic dirt on one cheek. Adjust the expression to convey strong focus, particularly around the eyes and brow. ABSOLUTELY NO changes to eye color or structure. ABSOLUTELY NO hair color changes. ABSOLUTELY NO tattoos or artificial markings. Completely human.",
-  "Add a simple, sturdy leather belt with a few small, practical pouches attached (if waist/torso is visible). ABSOLUTELY NO facial alterations. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Must remain entirely human.",
-  "Style hair in a practical, tied-back ponytail or a slightly messy but functional short cut. Style only. ABSOLUTELY NO hair color change, ABSOLUTELY NO unnatural highlights. ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Keep appearance fully human.",
-  "Add a very subtle, faded, natural-looking scratch (not a deep scar) on the eyebrow or cheekbone, hinting at past resilience. ABSOLUTELY NO other facial markings, ABSOLUTELY NO tattoos. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. Must appear entirely human.",
-  "Add a simple, dark-colored, functional tank top or a robust, plain t-shirt (modify existing clothing if necessary). ABSOLUTELY NO facial alterations. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Ensure completely human look.",
-  "Give the facial expression a look of fierce determination and unwavering resolve, focused on mouth and brow. Purely human. ABSOLUTELY NO artificial enhancements, ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes, ABSOLUTELY NO tattoos. Entirely human.",
-  "Ensure the expression is alert and conveys intelligence, reflecting a survivor's spirit through overall facial composure. ABSOLUTELY NO changes to eye color, ABSOLUTELY NO facial technology. ABSOLUTELY NO hair color changes. ABSOLUTELY NO tattoos. Preserve human appearance.",
-  "Add a well-worn, fingerless sturdy work glove on one hand if visible. ABSOLUTELY NO facial or head alterations. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Subject must be completely human.",
-  "Add a slightly weathered texture to the skin, conveying experience. The expression should show strength through a firm set of the jaw. ABSOLUTELY NO metallic elements, ABSOLUTELY NO tattoos. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. Fully human look."
+  "Add the collar of a tough, worn denim or canvas jacket.",
+  "Add a simple, sturdy leather belt with a few small, practical pouches attached (if waist/torso is visible).",
+  "Style hair in a practical, tied-back ponytail.",
+  "Add a simple, dark-colored, functional tank top or a robust, plain t-shirt (modify existing clothing if necessary).",
+  "Ensure the expression is alert and conveys intelligence, reflecting a survivor's spirit through overall facial composure.",
+  "Add a well-worn, fingerless sturdy work glove on one hand if visible.",
+  "Add a slightly weathered texture to the skin, conveying experience."
 ];
 
 export const KYLE_REESE_PROMPTS: string[] = [
-  "Add the collar of a worn, dark trench coat or a rugged, well-used field jacket over a plain t-shirt. ABSOLUTELY NO facial alterations. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Must remain entirely human.",
-  "Set the jaw in a determined line, with an overall expression of focused intensity. Purely human. ABSOLUTELY NO artificial elements. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Subject must look completely human.",
-  "Add a simple, worn leather strap across the chest, as if for carrying essential supplies. ABSOLUTELY NO facial or head alterations. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Ensure a completely human appearance.",
-  "Style hair in a slightly unkempt, practical cut, suggesting someone who has endured hardship but remains strong. Style only. ABSOLUTELY NO hair color change, ABSOLUTELY NO unnatural highlights. ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Keep appearance fully human.",
-  "Add a few days' stubble to the jawline and a small, healed, natural-looking nick or minor scratch (not a deep scar) on the chin or lip. ABSOLUTELY NO other facial markings or technology. ABSOLUTELY NO tattoos. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. Must appear entirely human.",
-  "Add a practical, well-worn canvas or leather vest over a simple shirt (modify existing clothing if necessary). ABSOLUTELY NO facial alterations. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Ensure completely human look.",
-  "Set the facial expression to grim determination, with lines of focus around the mouth and brow. No artificial enhancements. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Purely human.",
-  "Subtly add faint, natural-looking dark circles under the eyes suggesting weariness but readiness, and an overall intense, focused expression. ABSOLUTELY NO change to eye color or iris. ABSOLUTELY NO facial technology. ABSOLUTELY NO hair color changes. ABSOLUTELY NO tattoos. Preserve human appearance.",
-  "Add a sturdy, worn leather watch or a simple, functional wrist compass if a wrist is visible. ABSOLUTELY NO items on the face or head. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Subject must be completely human.",
-  "Give clothing a slightly dusty and well-traveled appearance, and a determined set to the mouth. ABSOLUTELY NO artificial facial alterations. ABSOLUTELY NO hair color changes, ABSOLUTELY NO eye color changes. ABSOLUTELY NO tattoos. Fully human look."
+  "Add the collar of a worn, dark trench coat or a rugged, well-used field jacket over a plain t-shirt.",
+  "Add a simple, worn leather strap across the chest, as if for carrying essential supplies.",
+  "Style hair in a slightly unkempt, practical cut, suggesting someone who has endured hardship but remains strong. Style only.",
+  "Add a few days' stubble to the jawline.",
+  "Add a practical, well-worn canvas or leather vest over a simple shirt.",
+  "Add a sturdy, worn leather watch or a simple, functional wrist compass if a wrist is visible.",
+  "Give clothing a slightly dusty and well-traveled appearance."
 ];
 
 
