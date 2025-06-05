@@ -30,29 +30,29 @@ export const CONNOR_PROMPTS: string[] = [
 ];
 
 export const SARAH_CONNOR_PROMPTS: string[] = [
-  "Add a tough, worn denim or canvas jacket collar, and a determined, unwavering gaze.",
-  "Give a resilient, survivor look with a smudge of dirt on the cheek and focused, intense eyes.",
-  "Overlay a simple, practical bandolier strap or a sturdy belt with pouches, suggesting resourcefulness.",
-  "Style hair in a practical ponytail or a slightly messy but functional cut, conveying readiness for action.",
-  "Add a minor, faded scar on the eyebrow or cheek, hinting at past struggles overcome.",
-  "Equip with a simple, dark, functional tank top or t-shirt, emphasizing a strong, human physique.",
-  "A facial expression of fierce determination and a protective maternal instinct.",
-  "Give the eyes a bright, intelligent, and hardened look, reflecting a survivor's spirit.",
-  "Place a simple, well-worn sturdy work glove on one hand if visible, or a wrap around the forearm.",
-  "Enhance skin with a realistic, slightly weathered texture, a strong jawline, and an aura of unyielding strength."
+  "Add a tough, worn denim or canvas jacket collar, and a determined, unwavering gaze in the eyes.",
+  "Add a smudge of dirt on one cheek and give the eyes a focused, intense look.",
+  "Add a simple, sturdy leather belt with a few small, practical pouches attached.",
+  "Style hair in a practical, tied-back ponytail or a slightly messy but functional short cut.",
+  "Add a very subtle, faded scar on the eyebrow or cheekbone, hinting at past resilience.",
+  "Add a simple, dark-colored, functional tank top or a robust, plain t-shirt.",
+  "Give the facial expression a look of fierce determination and unwavering resolve.",
+  "Make the eyes bright and intelligent, reflecting a hardened but hopeful survivor's spirit.",
+  "Add a well-worn, fingerless leather glove on one hand.",
+  "Add a slightly weathered texture to the skin, conveying experience, and define the jawline for a look of strength."
 ];
 
 export const KYLE_REESE_PROMPTS: string[] = [
-  "Add a worn, dark trench coat collar or a simple, rugged jacket over a plain t-shirt.",
-  "Give a haunted but resolute look in the eyes, with an expression of weary determination.",
-  "Overlay a simple, improvised strap for carrying gear, made of canvas or leather.",
-  "Style hair in a slightly unkempt, practical manner, as if having endured hardship.",
-  "Add a few days' stubble or a very subtle, healed cut on the lip, showing a tough journey.",
-  "Convey a lean, wiry build, with clothing that is functional but shows signs of wear.",
-  "A facial expression of grim determination, alertness, and a protective nature.",
-  "Add a look of intense focus and readiness in the eyes, perhaps with dark circles suggesting lack of sleep.",
-  "Place a simple, well-used (but not futuristic) sidearm visibly holstered, or a combat knife sheathed.",
-  "Give a slightly dirty or battle-worn appearance to clothing and skin, emphasizing survival against odds."
+  "Add the collar of a worn, dark trench coat or a rugged, well-used field jacket over a plain t-shirt.",
+  "Give the eyes a look of resolute determination, with an expression of focused intensity.",
+  "Add a simple, worn leather strap across the chest, as if for carrying essential supplies.",
+  "Style hair in a slightly unkempt, practical cut, suggesting someone who has endured hardship but remains strong.",
+  "Add a few days' stubble to the jawline and a small, healed nick or cut on the chin or lip.",
+  "Add a practical, well-worn canvas or leather vest over a simple shirt.",
+  "Set the facial expression to grim determination, with alert and watchful eyes.",
+  "Give the eyes an intense, focused look, perhaps with subtle dark circles indicating readiness, not despair.",
+  "Add a sturdy, worn leather watch or a simple, functional wrist compass.",
+  "Give clothing a slightly dusty and well-traveled appearance, and a determined set to the mouth."
 ];
 
 
