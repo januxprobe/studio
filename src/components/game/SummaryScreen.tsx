@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from 'react';
@@ -85,7 +86,12 @@ export function SummaryScreen({ finalImage, answers }: SummaryScreenProps) {
               {answers.map((ans) => (
                 <TableRow key={ans.questionId}>
                   <TableCell className="font-medium">{ans.questionText}</TableCell>
-                  <TableCell>{ans.selectedAnswerText} <span className="text-sm text-muted-foreground">({ans.persona})</span></TableCell>
+                  <TableCell>
+                    {ans.selectedAnswerText}{' '}
+                    <span className="text-sm text-muted-foreground">
+                      ({ans.specificCharacterPersona})
+                    </span>
+                  </TableCell>
                   <TableCell className="text-sm italic">{ans.transformationPrompt}</TableCell>
                 </TableRow>
               ))}

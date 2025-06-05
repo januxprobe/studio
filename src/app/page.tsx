@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import type { GameState, Question, UserAnswerRecord, Persona, DetectedGender } from '@/types';
+import type { GameState, Question, UserAnswerRecord, Persona, DetectedGender, SpecificCharacterPersona } from '@/types';
 import { generateQuestions, type QuestionAnswer as GenkitQuestionAnswer } from '@/ai/flows/generate-questions';
 import { transformImage } from '@/ai/flows/transform-image';
 import { detectGender } from '@/ai/flows/detect-gender';
@@ -133,17 +133,22 @@ export default function AIDestinyMirrorPage() {
     const currentQ = questions[currentQuestionIndex];
     let transformationPrompt = '';
     const selectedAnswerText = selectedPersona === 'Terminator' ? currentQ.fatalisticAnswer : currentQ.optimisticAnswer;
+    let appliedCharacterPersona: SpecificCharacterPersona;
 
     if (selectedPersona === 'Terminator') {
       transformationPrompt = currentQ.fatalisticPrompt;
+      appliedCharacterPersona = 'Terminator';
     } else { // Connor persona
       const connorPromptsBaseIndex = currentQuestionIndex;
       if (detectedGender === 'female') {
         transformationPrompt = SARAH_CONNOR_PROMPTS[connorPromptsBaseIndex % SARAH_CONNOR_PROMPTS.length];
+        appliedCharacterPersona = 'Sarah Connor';
       } else if (detectedGender === 'male') {
         transformationPrompt = KYLE_REESE_PROMPTS[connorPromptsBaseIndex % KYLE_REESE_PROMPTS.length];
+        appliedCharacterPersona = 'Kyle Reese';
       } else { // 'unknown' or null
         transformationPrompt = CONNOR_PROMPTS[connorPromptsBaseIndex % CONNOR_PROMPTS.length]; 
+        appliedCharacterPersona = 'Connor';
       }
     }
     
@@ -157,6 +162,7 @@ export default function AIDestinyMirrorPage() {
         selectedAnswerText: selectedAnswerText,
         persona: selectedPersona,
         transformationPrompt: transformationPrompt,
+        specificCharacterPersona: appliedCharacterPersona,
       }]);
 
       if (currentQuestionIndex < questions.length - 1) {
