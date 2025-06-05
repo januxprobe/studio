@@ -1,3 +1,4 @@
+
 import type { Question } from '@/types';
 
 export const TERMINATOR_PROMPTS: string[] = [
@@ -13,6 +14,7 @@ export const TERMINATOR_PROMPTS: string[] = [
   "Create a battle-damaged look with cracked metallic parts."
 ];
 
+// Generic Connor prompts for fallback or if gender is 'unknown'
 export const CONNOR_PROMPTS: string[] = [
   "Add a sleek, futuristic tactical headset over one ear.",
   "Enhance the lighting to be heroic and focused, perhaps with a slight lens flare.",
@@ -26,6 +28,33 @@ export const CONNOR_PROMPTS: string[] = [
   "Add a subtle glow to the eyes, suggesting focus and enhanced perception."
 ];
 
+export const SARAH_CONNOR_PROMPTS: string[] = [
+  "Add a tactical, sleeveless vest and determined, steely eyes.",
+  "Give a gritty, survivor look with subtle smudges and a focused expression.",
+  "Overlay combat-worn utility belt straps visible on the shoulder or chest.",
+  "Slightly tousle hair, add a few strands across the forehead, looking resolute and battle-ready.",
+  "Enhance muscle definition subtly on arms if visible, suggesting strength and resilience.",
+  "Add a dark, utilitarian tank top and a serious, no-nonsense demeanor.",
+  "Incorporate a small, almost hidden, faded scar on the cheek or temple, hinting at past battles.",
+  "Give the eyes a steely, protective, and unwavering gaze.",
+  "Place a dark, functional bandana or headband, classic Sarah Connor style.",
+  "Subtly weather the skin texture, add a determined set to the jawline."
+];
+
+export const KYLE_REESE_PROMPTS: string[] = [
+  "Add a worn, dark long trench coat collar visible over practical clothing.",
+  "Give a haunted, intense, and weary look in the eyes, reflecting a harsh future.",
+  "Overlay a simple, functional, worn leather bandolier strap across the chest.",
+  "Messy, short, utilitarian-cut hair, looking like someone who's been on the run and in hiding.",
+  "Incorporate a few faded scars or light bruises on the face, suggesting hardship and combat.",
+  "A lean, wiry physique suggested by the set of the shoulders, implying resilience.",
+  "A facial expression of cautious vigilance, weariness, and underlying determination.",
+  "Add worn, fingerless tactical gloves if hands are visible.",
+  "Place a single, futuristic energy cell or a shotgun shell visibly on a strap.",
+  "Subtly add stubble, a slightly gaunt appearance to the cheeks, and a grim set to the mouth."
+];
+
+
 export const FALLBACK_QUESTIONS: Question[] = [
   {
     id: 'fallback-1',
@@ -33,7 +62,7 @@ export const FALLBACK_QUESTIONS: Question[] = [
     fatalisticAnswer: "Existential threat to humanity and job displacement at an unprecedented scale.",
     optimisticAnswer: "Ensuring ethical use and maintaining data privacy while unlocking new potentials.",
     fatalisticPrompt: TERMINATOR_PROMPTS[0],
-    optimisticPrompt: CONNOR_PROMPTS[0],
+    optimisticPrompt: CONNOR_PROMPTS[0], // Generic Connor prompt for fallback
   },
   {
     id: 'fallback-2',
