@@ -29,29 +29,29 @@ export const CONNOR_PROMPTS: string[] = [
 ];
 
 export const SARAH_CONNOR_PROMPTS: string[] = [
-  "Add a tactical, sleeveless vest and determined, steely eyes.",
-  "Give a gritty, survivor look with subtle smudges and a focused expression.",
-  "Overlay combat-worn utility belt straps visible on the shoulder or chest.",
-  "Slightly tousle hair, add a few strands across the forehead, looking resolute and battle-ready.",
-  "Enhance muscle definition subtly on arms if visible, suggesting strength and resilience.",
-  "Add a dark, utilitarian tank top and a serious, no-nonsense demeanor.",
-  "Incorporate a small, almost hidden, faded scar on the cheek or temple, hinting at past battles.",
-  "Give the eyes a steely, protective, and unwavering gaze.",
-  "Place a dark, functional bandana or headband, classic Sarah Connor style.",
-  "Subtly weather the skin texture, add a determined set to the jawline."
+  "Add a sleek, tactical sleeveless vest and determined, focused eyes.",
+  "Give a resilient, survivor look with a confident expression and artfully styled, slightly tousled hair.",
+  "Overlay futuristic, glowing blue utility straps or a tech-enhanced bandolier visible on the shoulder or chest.",
+  "Style hair in a practical but cool updo or braid, looking resolute and ready for action.",
+  "Add subtle cybernetic enhancements like glowing circuit patterns on one arm or a sophisticated neural interface at the temple.",
+  "Equip with a stylish, dark, high-tech armored top and a determined, no-nonsense demeanor.",
+  "Add a small, intricate, glowing blue tech-tattoo or emblem on the cheek or neck, symbolizing resistance.",
+  "Give the eyes a bright, intelligent, and unwavering gaze, perhaps with a subtle data-stream reflection.",
+  "Place a sleek, augmented reality visor or advanced comms earpiece.",
+  "Enhance skin with a subtle, healthy glow, a determined set to the jawline, and an aura of quiet strength."
 ];
 
 export const KYLE_REESE_PROMPTS: string[] = [
-  "Add a worn, dark long trench coat collar visible over practical clothing.",
-  "Give a haunted, intense, and weary look in the eyes, reflecting a harsh future.",
-  "Overlay a simple, functional, worn leather bandolier strap across the chest.",
-  "Messy, short, utilitarian-cut hair, looking like someone who's been on the run and in hiding.",
-  "Incorporate a few faded scars or light bruises on the face, suggesting hardship and combat.",
-  "A lean, wiry physique suggested by the set of the shoulders, implying resilience.",
-  "A facial expression of cautious vigilance, weariness, and underlying determination.",
-  "Add worn, fingerless tactical gloves if hands are visible.",
-  "Place a single, futuristic energy cell or a shotgun shell visibly on a strap.",
-  "Subtly add stubble, a slightly gaunt appearance to the cheeks, and a grim set to the mouth."
+  "Add a stylish, worn leather jacket or a modern tactical trench coat collar over practical, dark clothing.",
+  "Give a sharp, vigilant, and resourceful look in the eyes, with an expression of focused readiness.",
+  "Overlay a high-tech, minimalist bandolier or a chest rig with glowing blue energy cells.",
+  "Style hair in a neat, short, tactical cut, looking sharp and ready for anything.",
+  "Add a very subtle, clean cybernetic line or a small metallic stud near the temple, hinting at advanced tech integration.",
+  "Convey a lean, athletic build through posture and add a futuristic, lightweight body armor vest.",
+  "A facial expression of calm confidence, sharp alertness, and underlying determination.",
+  "Add sleek, high-tech tactical gloves with glowing accents if hands are visible.",
+  "Place a compact, advanced plasma pistol or a futuristic multi-tool visibly on a hip or thigh holster.",
+  "Give a clean-shaven, sharp look with a confident, determined expression and an energetic aura."
 ];
 
 
@@ -137,3 +137,4 @@ export const FALLBACK_QUESTIONS: Question[] = [
     optimisticPrompt: CONNOR_PROMPTS[9],
   },
 ];
+
