@@ -30,7 +30,7 @@ export function QuestionDisplay({ question, questionNumber, totalQuestions, onAn
         <Button
           onClick={() => onAnswer('Terminator')}
           disabled={isLoading}
-          className="w-full py-6 text-left justify-start h-auto border border-primary/30"
+          className="w-full py-6 text-left justify-start h-auto border border-primary/30 whitespace-normal"
           variant="default"
         >
           {question.fatalisticAnswer}
@@ -38,7 +38,7 @@ export function QuestionDisplay({ question, questionNumber, totalQuestions, onAn
         <Button
           onClick={() => onAnswer('Connor')}
           disabled={isLoading}
-          className="w-full py-6 text-left justify-start h-auto border border-primary/30"
+          className="w-full py-6 text-left justify-start h-auto border border-primary/30 whitespace-normal"
           variant="default"
         >
          {question.optimisticAnswer}
