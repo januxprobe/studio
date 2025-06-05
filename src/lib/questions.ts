@@ -38,7 +38,7 @@ export const SARAH_CONNOR_PROMPTS: string[] = [
   "Equip with a simple, dark, functional tank top or t-shirt, emphasizing a strong, human physique.",
   "A facial expression of fierce determination and a protective maternal instinct.",
   "Give the eyes a bright, intelligent, and hardened look, reflecting a survivor's spirit.",
-  "Place a simple, well-worn tactical glove on one hand if visible, or a wrap around the forearm.",
+  "Place a simple, well-worn sturdy work glove on one hand if visible, or a wrap around the forearm.",
   "Enhance skin with a realistic, slightly weathered texture, a strong jawline, and an aura of unyielding strength."
 ];
 
@@ -138,3 +138,4 @@ export const FALLBACK_QUESTIONS: Question[] = [
     optimisticPrompt: CONNOR_PROMPTS[9],
   },
 ];
+
