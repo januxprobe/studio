@@ -15,42 +15,41 @@ export const TERMINATOR_PROMPTS: string[] = [
 ];
 
 // Generic Connor prompts for fallback or if gender is 'unknown'
-// These can retain a slightly more tech-neutral or adaptable feel
 export const CONNOR_PROMPTS: string[] = [
-  "Add a determined glint to the eyes and a slightly more resolute expression.",
-  "Enhance the lighting to be heroic and focused, perhaps with a subtle warm glow.",
-  "Place a subtle, worn emblem or patch on clothing if visible (e.g., a simple resistance symbol), otherwise a faint aura of inner strength.",
+  "Subtly enhance the set of the jaw to show determination, and a slightly more resolute expression.",
+  "Enhance the lighting to be heroic and focused, perhaps with a subtle warm glow on the scene, not directly on the eyes.",
+  "Place a subtle, worn emblem or patch on clothing if visible (e.g., a simple resistance symbol), otherwise a faint aura of inner strength in their posture.",
   "Subtly enhance facial features to convey a confident, determined expression, emphasizing human resilience.",
-  "Give the hair a slightly wind-swept or practical, action-ready look.",
+  "Give the hair a slightly wind-swept or practical, action-ready look (style only, no color change).",
   "If possible, add a very subtle, well-worn leather or canvas strap detail on the shoulder or chest.",
-  "Clean and sharpen the skin texture for a defined, yet human look, perhaps with a hint of grit.",
-  "Add a look of intense focus or unwavering resolve to the eyes.",
-  "Place a simple, functional piece of gear like a well-used communications earpiece (not overly futuristic).",
-  "Add a subtle glow of determination or hope in the eyes."
+  "Clean and sharpen the skin texture for a defined, yet human look, perhaps with a hint of grit or minor, natural-looking smudges.",
+  "Adjust the brow slightly to convey intense focus, combined with an unwavering, resolute mouth.",
+  "Place a simple, functional piece of gear like a well-used communications earpiece (not overly futuristic or altering core features).",
+  "Ensure the expression conveys quiet confidence and resilience, perhaps through a steady posture."
 ];
 
 export const SARAH_CONNOR_PROMPTS: string[] = [
-  "Add a tough, worn denim or canvas jacket collar, and a determined, unwavering gaze in the eyes.",
-  "Add a smudge of dirt on one cheek and give the eyes a focused, intense look.",
+  "Add a tough, worn denim or canvas jacket collar, and set the mouth in a firm line suggesting determination.",
+  "Add a smudge of natural-looking dirt on one cheek and subtly sharpen the facial features to convey focus.",
   "Add a simple, sturdy leather belt with a few small, practical pouches attached.",
-  "Style hair in a practical, tied-back ponytail or a slightly messy but functional short cut.",
-  "Add a very subtle, faded scar on the eyebrow or cheekbone, hinting at past resilience.",
+  "Style hair in a practical, tied-back ponytail or a slightly messy but functional short cut (style only, no color change).",
+  "Add a very subtle, faded, natural-looking scar on the eyebrow or cheekbone, hinting at past resilience.",
   "Add a simple, dark-colored, functional tank top or a robust, plain t-shirt.",
-  "Give the facial expression a look of fierce determination and unwavering resolve.",
-  "Make the eyes bright and intelligent, reflecting a hardened but hopeful survivor's spirit.",
+  "Give the facial expression a look of fierce determination and unwavering resolve, focused on mouth and brow.",
+  "Ensure the expression is alert and conveys intelligence, reflecting a survivor's spirit through overall facial composure.",
   "Add a well-worn, fingerless leather glove on one hand.",
   "Add a slightly weathered texture to the skin, conveying experience, and define the jawline for a look of strength."
 ];
 
 export const KYLE_REESE_PROMPTS: string[] = [
   "Add the collar of a worn, dark trench coat or a rugged, well-used field jacket over a plain t-shirt.",
-  "Give the eyes a look of resolute determination, with an expression of focused intensity.",
+  "Set the jaw in a determined line, with an overall expression of focused intensity.",
   "Add a simple, worn leather strap across the chest, as if for carrying essential supplies.",
-  "Style hair in a slightly unkempt, practical cut, suggesting someone who has endured hardship but remains strong.",
-  "Add a few days' stubble to the jawline and a small, healed nick or cut on the chin or lip.",
+  "Style hair in a slightly unkempt, practical cut, suggesting someone who has endured hardship but remains strong (style only, no color change).",
+  "Add a few days' stubble to the jawline and a small, healed, natural-looking nick or cut on the chin or lip.",
   "Add a practical, well-worn canvas or leather vest over a simple shirt.",
-  "Set the facial expression to grim determination, with alert and watchful eyes.",
-  "Give the eyes an intense, focused look, perhaps with subtle dark circles indicating readiness, not despair.",
+  "Set the facial expression to grim determination, with lines of focus around the mouth and brow.",
+  "Subtly add faint, natural-looking dark circles under the eyes suggesting weariness but readiness, and an overall intense, focused expression (no change to eye color or iris).",
   "Add a sturdy, worn leather watch or a simple, functional wrist compass.",
   "Give clothing a slightly dusty and well-traveled appearance, and a determined set to the mouth."
 ];
@@ -138,4 +137,3 @@ export const FALLBACK_QUESTIONS: Question[] = [
     optimisticPrompt: CONNOR_PROMPTS[9],
   },
 ];
-
