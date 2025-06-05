@@ -42,18 +42,24 @@ const transformImageFlow = ai.defineFlow(
     outputSchema: TransformImageOutputSchema,
   },
   async input => {
-    const fullPromptText = `You are an expert image editor. Your task is to modify an image that has ALREADY UNDERGONE previous transformations. Each new modification MUST be cumulative and layered on top of existing features.
+    const fullPromptText = `You are an expert image editor. Your task is to modify an image that ALREADY HAS transformations applied to the person and background. Each new modification MUST be cumulative and preserve prior work.
 
-Step 1: Background Consistency.
-The background of the image MUST be a solid, vibrant orange color (specifically HSL 24 95% 45% --- a bright, saturated orange).
-- If the current image already has this exact orange background, PERFECTLY MAINTAIN IT.
-- If the background is different, replace it with this solid orange color.
-When adjusting or confirming the background, you MUST meticulously preserve the primary human subject in the foreground, including ALL their current features and EVERY transformation already applied to them from previous steps. DO NOT alter the subject at this stage.
+1.  **Background Management**:
+    *   The background of the image MUST be a solid, vibrant orange color (specifically HSL 24 95% 45%).
+    *   If the current image already has this exact orange background, PERFECTLY MAINTAIN IT without any changes.
+    *   If the background is different, replace it with this solid orange color. During this background replacement, the human subject in the foreground, including ALL their current features (e.g., hair, eyes, clothing, any existing cybernetics, accessories, scars, makeup, etc., from previous transformations), MUST remain COMPLETELY UNALTERED and perfectly preserved.
 
-Step 2: Strictly Additive Subject Transformation.
-After ensuring the background is correct and the subject's existing features are untouched, apply the following new transformation to the human subject. This transformation MUST BE STRICTLY ADDITIVE. You are to layer the new features described in the prompt below onto the subject.
-CRITICAL INSTRUCTION: DO NOT remove, DO NOT replace, and DO NOT significantly alter any existing characteristics or previously applied transformations already present on the subject. The new elements must be added *on top of* or *alongside* what is already there. Imagine you are adding a new layer in an image editing program.
-The new transformation to add to the subject is: "${input.prompt}"`;
+2.  **Strictly Additive Subject Modification**:
+    *   The human subject in the input image has existing features and prior transformations. These existing features and transformations form the BASE of the subject and MUST NOT BE REMOVED, REPLACED, ERASED, or DIMINISHED in any way.
+    *   Your task is to ADD the new feature described in the "New Transformation to Add" section below. This new feature must be layered ON TOP OF or ALONGSIDE the subject's *current, existing* state.
+    *   Imagine you are adding a new, distinct layer in an image editing program. The layers below (representing the subject's existing state from the input image) must remain fully visible and unchanged, except where the new layer additively covers a small part or sits next to them.
+    *   **New Transformation to Add**: "${input.prompt}"
+
+    CRITICAL GUIDANCE:
+    *   DO NOT "re-interpret" or "re-draw" existing subject features. Preserve them meticulously and only add the new element.
+    *   Example: If the subject in the input image already has a robotic eye and a scar, and the "New Transformation to Add" is "add a small tattoo on the neck", the final image must still show the original robotic eye and the original scar exactly as they were, plus the new tattoo on the neck.
+    *   If the "New Transformation to Add" itself implies a replacement (e.g., "change hair color to blue" when hair is currently red, or "add futuristic goggles" when the subject already has glasses), perform the replacement as minimally as possible for that specific feature, while still preserving all other unrelated existing features. However, if the prompt is ambiguous (e.g., "add cybernetic enhancement to arm" when arm already has some), prefer adding new distinct elements alongside or layered on existing ones if feasible. The primary goal is CUMULATIVE addition of new, distinct elements.
+`;
 
     const {media} = await ai.generate({
       model: 'googleai/gemini-2.0-flash-exp',
