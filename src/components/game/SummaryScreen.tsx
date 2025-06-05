@@ -11,11 +11,31 @@ import { ImageDisplay } from './ImageDisplay';
 import { isValidProfessionalEmail } from '@/lib/emailValidator';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Share2 } from 'lucide-react';
+import { PieChart, Pie, Cell } from 'recharts';
+import {
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig
+} from "@/components/ui/chart";
 
 type SummaryScreenProps = {
   finalImage: string | null;
   answers: UserAnswerRecord[];
 };
+
+const chartConfig = {
+  terminator: {
+    label: "Terminator",
+    color: "hsl(var(--destructive))",
+  },
+  connorAlliance: {
+    label: "Connor Alliance",
+    color: "hsl(var(--accent))",
+  },
+} satisfies ChartConfig;
 
 export function SummaryScreen({ finalImage, answers }: SummaryScreenProps) {
   const [email, setEmail] = useState('');
@@ -47,14 +67,22 @@ export function SummaryScreen({ finalImage, answers }: SummaryScreenProps) {
     if (!validateEmail(email)) {
       return;
     }
-    // Placeholder for share functionality
     console.log(`Sharing final image and summary for email: ${email}`);
     toast({
       title: "Shared Successfully!",
       description: `Your AI Destiny Mirror results have been noted for ${email}. (Demo share)`,
     });
-    setIsShared(true); 
+    setIsShared(true);
   };
+
+  const terminatorCount = answers.filter(ans => ans.specificCharacterPersona === 'Terminator').length;
+  const connorCount = answers.length - terminatorCount;
+  const totalAnswers = answers.length;
+
+  const pieData = [
+    { personaType: 'terminator', count: terminatorCount, fill: "var(--color-terminator)" },
+    { personaType: 'connorAlliance', count: connorCount, fill: "var(--color-connorAlliance)" },
+  ].filter(item => item.count > 0); // Filter out items with 0 count to avoid empty slices if one persona has 0%
 
   return (
     <div className="space-y-8 w-full max-w-4xl">
@@ -67,6 +95,59 @@ export function SummaryScreen({ finalImage, answers }: SummaryScreenProps) {
           <ImageDisplay imageUrl={finalImage} isLoading={false} altText="Final transformed image" />
         </CardContent>
       </Card>
+
+      {totalAnswers > 0 && (
+        <Card className="shadow-xl">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl font-headline">Persona Breakdown</CardTitle>
+            <CardDescription>Your choices leaned towards...</CardDescription>
+          </CardHeader>
+          <CardContent className="flex justify-center items-center h-[300px] sm:h-[350px]">
+            <ChartContainer config={chartConfig} className="w-full h-full max-w-xs sm:max-w-sm aspect-square mx-auto">
+              <PieChart>
+                <ChartTooltip
+                  cursor={false}
+                  content={<ChartTooltipContent hideLabel nameKey="personaType" />}
+                />
+                <Pie
+                  data={pieData}
+                  dataKey="count"
+                  nameKey="personaType"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={100}
+                  innerRadius={50}
+                  labelLine={false}
+                  label={({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, payload }) => {
+                    if (percent === 0) return null; // Don't render label for 0%
+                    const RADIAN = Math.PI / 180;
+                    const radius = innerRadius + (outerRadius - innerRadius) * 0.6; // Adjust label position
+                    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+                    return (
+                      <text
+                        x={x}
+                        y={y}
+                        fill="hsl(var(--primary-foreground))"
+                        textAnchor="middle"
+                        dominantBaseline="central"
+                        className="text-sm font-semibold"
+                      >
+                        {`${(percent * 100).toFixed(0)}%`}
+                      </text>
+                    );
+                  }}
+                >
+                  {pieData.map((entry) => (
+                    <Cell key={`cell-${entry.personaType}`} fill={entry.fill} />
+                  ))}
+                </Pie>
+                <ChartLegend content={<ChartLegendContent nameKey="personaType" />} />
+              </PieChart>
+            </ChartContainer>
+          </CardContent>
+        </Card>
+      )}
 
       <Card className="shadow-xl">
         <CardHeader>
@@ -135,3 +216,4 @@ export function SummaryScreen({ finalImage, answers }: SummaryScreenProps) {
     </div>
   );
 }
+
