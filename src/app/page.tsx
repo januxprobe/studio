@@ -70,9 +70,35 @@ export default function AIDestinyMirrorPage() {
 
   const handlePhotoCaptured = (imageDataUri: string) => {
     setOriginalImage(imageDataUri);
-    setUserImage(imageDataUri); 
+    setUserImage(imageDataUri); // Show raw image first
     setGameState('question');
     loadQuestions();
+
+    // Apply initial background transformation
+    const applyInitialBackgroundTransformation = async () => {
+      if (!imageDataUri) return;
+      setIsLoadingImage(true);
+      setError(null);
+      try {
+        const result = await transformImage({
+          photoDataUri: imageDataUri,
+          prompt: "Make no changes to the subject.", // This prompt tells Step 2 of transformImage to not alter the subject
+        });
+        setUserImage(result.transformedPhotoDataUri);
+      } catch (err) {
+        console.error('Initial background transformation failed:', err);
+        // If it fails, userImage remains the original imageDataUri, which is fine.
+        toast({
+          title: "Background Effect Failed",
+          description: "Could not apply the orange background. Continuing with original image.",
+          variant: "destructive",
+        });
+      } finally {
+        setIsLoadingImage(false);
+      }
+    };
+
+    applyInitialBackgroundTransformation();
   };
 
   const handleAnswer = async (selectedPersona: Persona) => {
@@ -86,6 +112,7 @@ export default function AIDestinyMirrorPage() {
     const selectedAnswerText = selectedPersona === 'Terminator' ? currentQ.fatalisticAnswer : currentQ.optimisticAnswer;
 
     try {
+      // userImage here might be the original or the one with orange background already
       const result = await transformImage({ photoDataUri: userImage, prompt });
       setUserImage(result.transformedPhotoDataUri);
       
