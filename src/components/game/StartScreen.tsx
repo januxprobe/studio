@@ -15,12 +15,19 @@ export function StartScreen({ onStart }: StartScreenProps) {
 
   const handleStartClick = () => {
     if (audioRef.current) {
-      audioRef.current.play().catch(error => {
-        // Autoplay was prevented, handle error or log it
-        console.error("Audio play failed:", error);
-      });
+      audioRef.current.play()
+        .catch(error => {
+          // Autoplay was prevented or another error occurred
+          console.error("Audio play failed:", error);
+          // We still want to proceed even if audio fails, so onStart() is in finally
+        })
+        .finally(() => {
+          onStart();
+        });
+    } else {
+      // If audioRef is somehow not available, proceed directly
+      onStart();
     }
-    onStart();
   };
 
   return (
