@@ -15,6 +15,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
 
   const handleStartClick = () => {
     if (audioRef.current) {
+      audioRef.current.load(); // Explicitly load the audio
       audioRef.current.play()
         .catch(error => {
           // Autoplay was prevented or another error occurred
@@ -26,6 +27,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
         });
     } else {
       // If audioRef is somehow not available, proceed directly
+      console.warn("Audio ref not current when attempting to play sound.");
       onStart();
     }
   };
