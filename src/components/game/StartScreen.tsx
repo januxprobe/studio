@@ -1,4 +1,7 @@
 
+'use client';
+
+import React, { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
@@ -8,6 +11,18 @@ type StartScreenProps = {
 };
 
 export function StartScreen({ onStart }: StartScreenProps) {
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const handleStartClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch(error => {
+        // Autoplay was prevented, handle error or log it
+        console.error("Audio play failed:", error);
+      });
+    }
+    onStart();
+  };
+
   return (
     <Card className="w-full max-w-md shadow-2xl">
       <CardHeader className="text-center">
@@ -19,7 +34,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
             </svg>
         </div>
         <CardTitle className="text-3xl font-headline">AI Destiny Mirror</CardTitle>
-        <div className="flex justify-center my-4">
+         <div className="flex justify-center my-4">
           <Image
             src="/assets/terminator.jpg"
             alt="The Terminator"
@@ -37,9 +52,10 @@ export function StartScreen({ onStart }: StartScreenProps) {
         <p className="text-center text-muted-foreground">
           Your choices will shape your digital reflection. Are you a pragmatic Connor or a resolute Terminator?
         </p>
-        <Button onClick={onStart} size="lg" className="w-full font-semibold">
+        <Button onClick={handleStartClick} size="lg" className="w-full font-semibold">
           Start Your Destiny
         </Button>
+        <audio ref={audioRef} src="/assets/ill-be-back.mp3" preload="auto" />
       </CardContent>
     </Card>
   );
