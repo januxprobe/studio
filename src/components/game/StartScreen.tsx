@@ -15,15 +15,32 @@ export function StartScreen({ onStart }: StartScreenProps) {
 
   const handleStartClick = () => {
     if (audioRef.current) {
-      audioRef.current.load(); // Explicitly load the audio
-      audioRef.current.play()
-        .catch(error => {
-          // Autoplay was prevented or another error occurred
-          console.error("Audio play failed:", error);
-          // We still want to proceed even if audio fails, so onStart() is in finally
+      const audioElement = audioRef.current;
+
+      // Define a cleanup function that removes the event listener and calls onStart
+      const cleanupAndProceed = () => {
+        audioElement.removeEventListener('ended', handleAudioEnd);
+        onStart();
+      };
+
+      const handleAudioEnd = () => {
+        console.log("Audio playback finished.");
+        cleanupAndProceed();
+      };
+
+      // Add event listener for when the audio finishes playing
+      audioElement.addEventListener('ended', handleAudioEnd);
+
+      audioElement.load(); // Explicitly load the audio
+      audioElement.play()
+        .then(() => {
+          console.log("Audio playback initiated.");
+          // Playback has started. The 'ended' event will handle proceeding.
         })
-        .finally(() => {
-          onStart();
+        .catch(error => {
+          console.error("Audio play failed:", error);
+          // If play() fails, remove the listener and proceed immediately so the game isn't stuck.
+          cleanupAndProceed();
         });
     } else {
       // If audioRef is somehow not available, proceed directly
